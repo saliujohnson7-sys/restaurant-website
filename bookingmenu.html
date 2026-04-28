@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Luxury Dining</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Luxury Dining</div>
+  <nav class="nav-links">
+    <a href="booking.html" class="nav-btn">Home</a>
+    <!-- <a href="bookingmenu.html" class="nav-btn active">Menu</a> -->
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="menu-hero">
+  <h1>Our Menu</h1>
+  <p>Crafted with passion. Served with elegance.</p>
+</section>
+
+<!-- MENU CONTENT -->
+<section class="menu-wrapper">
+
+  <!-- STARTERS -->
+  <div class="menu-category">
+    <h2>Starters</h2>
+
+    <div class="menu-grid">
+
+      <div class="menu-item">
+  <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a" alt="">
+
+  <div class="menu-info">
+    <h3>Creamy Mushroom Soup</h3>
+    <p>Rich, smooth, and served with herbs.</p>
+  </div>
+
+  <span class="price">₦8,000</span>
+
+  <a href="bookingserve.html" class="book-btn">Book</a>
+</div>
+
+<div class="menu-item">
+  <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="">
+
+  <div class="menu-info">
+    <h3>Garden Fresh Salad</h3>
+    <p>Organic greens with light dressing.</p>
+  </div>
+
+  <span class="price">₦6,500</span>
+
+  <a href="reservation.html" class="book-btn">Book</a>
+</div>
+
+    </div>
+  </div>
+
+  <!-- MAINS -->
+  <div class="menu-category">
+    <h2>Main Course</h2>
+
+    <div class="menu-grid">
+
+      <div class="menu-item">
+  <img src="https://images.unsplash.com/photo-1558030006-450675393462" alt="">
+
+  <div class="menu-info">
+    <h3>Grilled Steak Deluxe</h3>
+    <p>Premium beef with roasted vegetables.</p>
+  </div>
+
+  <span class="price">₦18,000</span>
+
+  <a href="reservation.html" class="book-btn">Book</a>
+</div>
+
+<div class="menu-item">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="">
+
+  <div class="menu-info">
+    <h3>Herb Salmon</h3>
+    <p>Lightly seasoned with citrus glaze.</p>
+  </div>
+
+  <span class="price">₦16,500</span>
+
+  <a href="reservation.html" class="book-btn">Book</a>
+</div>
+
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-category">
+    <h2>Desserts</h2>
+
+    <div class="menu-grid">
+
+      <div class="menu-item">
+  <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="">
+
+  <div class="menu-info">
+    <h3>Chocolate Lava Cake</h3>
+    <p>Warm, rich, and served with ice cream.</p>
+  </div>
+
+  <span class="price">₦7,000</span>
+
+  <a href="reservation.html" class="book-btn">Book</a>
+</div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
+
+<script>
+    const links = document.querySelectorAll(".nav-btn");
+
+// highlight active page
+links.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add("active");
+  }
+});
+
+// optional: smooth fade when navigating pages
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    document.body.style.opacity = "0.6";
+  });
+});
+</script>

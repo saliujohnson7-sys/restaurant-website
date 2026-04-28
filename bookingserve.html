@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations | Luxury Dining</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Luxury Dining</div>
+  <nav class="nav-links">
+    <a href="booking.html" class="nav-btn">Home</a>
+    <a href="bookingmenu.html" class="nav-btn">Menu</a>
+  </nav>
+</header>
+
+<section class="reserve-hero">
+  <h1>Reserve Your Table</h1>
+  <p>Book an unforgettable dining experience with us.</p>
+</section>
+
+<section class="reservation-section">
+
+  <form class="reservation-form">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" placeholder="Your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="Your email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" required>
+    </div>
+
+    <div class="form-group">
+      <label>Time</label>
+      <input type="time" required>
+    </div>
+
+    <div class="form-group">
+      <label>Guests</label>
+      <select>
+        <option>1 Person</option>
+        <option>2 People</option>
+        <option>3 People</option>
+        <option>4+ People</option>
+      </select>
+    </div>
+
+    <button type="submit"><a href="bookingsuccess.html">Confirm Reservation</a></button>
+
+  </form>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    const form = document.getElementById("reservationForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = form.querySelector("input[type='text']").value;
+  const email = form.querySelector("input[type='email']").value;
+  const date = form.querySelector("input[type='date']").value;
+  const time = form.querySelector("input[type='time']").value;
+
+  // simple validation
+  if (!name || !email || !date || !time) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  // success message
+  alert(`Reservation confirmed for ${name}! We will contact you shortly.`);
+
+  // reset form
+  form.reset();
+});
+</script>

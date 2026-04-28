@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Luxury Dining</div>
+  <!-- <nav class="nav-links">
+    <a href="booking.html" class="nav-btn">Home</a>
+    <a href="bookingmenu.html" class="nav-btn">Menu</a>
+  </nav> -->
+</header>
+
+<section class="success-container">
+
+  <div class="success-box">
+    <h1>🎉 Booking Confirmed</h1>
+
+    <p>Thank you for your reservation. We look forward to serving you an unforgettable dining experience.</p>
+
+    <div class="booking-summary">
+      <h3>Your Details</h3>
+      <p>
+  Your reservation has been successfully received.  
+  We are preparing your table.
+</p>
+    </div>
+
+    <a href="booking.html" class="back-btn">Back to Menu</a>
+
+  </div>
+
+</section>
+
+<script src="success.js"></script>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  
+  const title = document.getElementById("title");
+  const message = document.getElementById("message");
+  const summary = document.getElementById("summary");
+  const btn = document.getElementById("btn");
+  const userDetails = document.getElementById("userDetails");
+
+  // ---------- ANIMATION SETUP ----------
+  const elements = [title, message, summary, btn];
+
+  elements.forEach(el => {
+    if (el) {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(15px)";
+    }
+  });
+
+  // stagger animation
+  setTimeout(() => {
+    if (title) animate(title);
+  }, 200);
+
+  setTimeout(() => {
+    if (message) animate(message);
+  }, 500);
+
+  setTimeout(() => {
+    if (summary) animate(summary);
+  }, 800);
+
+  setTimeout(() => {
+    if (btn) animate(btn);
+  }, 1100);
+
+  function animate(el) {
+    el.style.transition = "0.6s ease";
+    el.style.opacity = "1";
+    el.style.transform = "translateY(0)";
+  }
+
+  // ---------- BOOKING DATA (OPTIONAL) ----------
+  const booking = JSON.parse(localStorage.getItem("booking"));
+
+  if (userDetails) {
+    if (booking) {
+      userDetails.innerHTML = `
+        <strong>Name:</strong> ${booking.name} <br>
+        <strong>Email:</strong> ${booking.email} <br>
+        <strong>Date:</strong> ${booking.date} <br>
+        <strong>Time:</strong> ${booking.time}
+      `;
+    } else {
+      userDetails.innerHTML = `
+        Your reservation has been successfully confirmed.  
+        We look forward to serving you.
+      `;
+    }
+  }
+
+  // ---------- OPTIONAL AUTO CLEANUP ----------
+  // clear storage after showing success page
+  localStorage.removeItem("booking");
+
+});
+</script>
